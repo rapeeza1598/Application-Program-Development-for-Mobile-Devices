@@ -8,6 +8,7 @@ class r1 extends StatefulWidget {
 }
 
 class _r1State extends State<r1> {
+  late int selChoice = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,24 +34,73 @@ class _r1State extends State<r1> {
                     ),
                     ListView(
                       shrinkWrap: true,
-                      children: const [
+                      children: [
                         ListTile(
+                          leading: Radio(
+                              value: 1,
+                              groupValue: selChoice,
+                              onChanged: (int? value) {
+                                setState(() {
+                                  selChoice = value!;
+                                });
+                              }),
                           title: Text("ตัวเลือกที่ 1"),
                         ),
                         ListTile(
+                          leading: Radio(
+                              value: 2,
+                              groupValue: selChoice,
+                              onChanged: (int? value) {
+                                setState(() {
+                                  selChoice = value!;
+                                });
+                              }),
                           title: Text("ตัวเลือกที่ 2"),
                         ),
                         ListTile(
+                          leading: Radio(
+                              value: 3,
+                              groupValue: selChoice,
+                              onChanged: (int? value) {
+                                setState(() {
+                                  selChoice = value!;
+                                });
+                              }),
                           title: Text("ตัวเลือกที่ 3"),
                         ),
                         ListTile(
+                          leading: Radio(
+                              value: 4,
+                              groupValue: selChoice,
+                              onChanged: (int? value) {
+                                setState(() {
+                                  selChoice = value!;
+                                });
+                              }),
                           title: Text("ตัวเลือกที่ 4"),
                         ),
                       ],
+                    ),
+                    Center(
+                      child: ElevatedButton(
+                          onPressed: () {
+                            checkAnswer();
+                          },
+                          child: Text("ตรวจคำตอบ")),
                     )
                   ]),
                 ]),
           ),
         ));
+  }
+
+  void checkAnswer() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("ตัวเลือกที่เลือกคือ $selChoice"),
+          );
+        });
   }
 }

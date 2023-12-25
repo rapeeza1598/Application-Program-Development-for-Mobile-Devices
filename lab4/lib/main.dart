@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lab4/quiz.dart';
 import 'package:lab4/r1.dart';
+import 'package:lab4/r3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: const r1(),
+      home: const Quiz(),
     );
   }
 }
