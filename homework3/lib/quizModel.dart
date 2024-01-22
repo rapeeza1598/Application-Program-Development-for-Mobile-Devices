@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final quizModel = quizModelFromJson(jsonString);
-
 import 'dart:convert';
 
 List<QuizModel> quizModelFromJson(String str) => List<QuizModel>.from(json.decode(str).map((x) => QuizModel.fromJson(x)));

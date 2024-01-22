@@ -1,7 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:numberpicker/numberpicker.dart';
+/// The above class is the root of a Flutter application that uses the MaterialApp widget and sets the
+/// theme and home page.
 
 class Lab51 extends StatefulWidget {
   const Lab51({super.key});
